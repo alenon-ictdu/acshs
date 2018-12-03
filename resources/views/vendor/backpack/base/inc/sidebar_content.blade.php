@@ -3,18 +3,18 @@
 @if(Auth::user()->user_type == 2)
 <li><a href="{{ backpack_url('dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
 <li><a href="{{backpack_url('announcement') }}"><i class="fa fa-bullhorn"></i> <span>Announcements</span></a></li>
-<li><a href="{{ route('message.index') }}"><i class="fa fa-inbox"></i> <span>Inbox</span></a></li>
+<li><a href="{{ route('message.index') }}"><i class="fa fa-inbox"></i> <span>Inbox</span> {{-- @if($unreadMessage > 0) <span class="badge">{{ $unreadMessage }}</span> @endif --}} </a></li>
 
 <li class="treeview">
             <a href="#"><i class="fa fa-newspaper-o"></i> <span>Content Management</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
-              <li><a href="{{ route('logo.index') }}"><i class="fa fa-file-o"></i> <span>Logo</span></a></li>
-              <li><a href="{{ route('schoolname.index') }}"><i class="fa fa-file-o"></i> <span>School Name</span></a></li>
-              <li><a href="{{ route('carousel.index') }}"><i class="fa fa-file-o"></i> <span>Carousel</span></a></li>
-              <li><a href="{{ route('about.index') }}"><i class="fa fa-file-o"></i> <span>About</span></a></li>
-              <li><a href="{{backpack_url('facility') }}"><i class="fa fa-file-o"></i> <span>Facilities</span></a></li>
-              <li><a href="{{backpack_url('administration') }}"><i class="fa fa-file-o"></i> <span>Administration</span></a></li>
-              <li><a href="{{ route('album.index') }}"><i class="fa fa-file-o"></i> <span>Album</span></a></li>
+              <li><a href="{{ route('logo.index') }}"><i class="fa fa-circle"></i> <span>Logo</span></a></li>
+              <li><a href="{{ route('schoolname.index') }}"><i class="fa fa-adn"></i> <span>School Name</span></a></li>
+              <li><a href="{{ route('carousel.index') }}"><i class="fa fa-image"></i> <span>Carousel</span></a></li>
+              <li><a href="{{ route('about.index') }}"><i class="fa fa-pencil"></i> <span>About</span></a></li>
+              <li><a href="{{backpack_url('facility') }}"><i class="fa fa-th"></i> <span>Facilities</span></a></li>
+              <li><a href="{{backpack_url('administration') }}"><i class="fa fa-users"></i> <span>Administration</span></a></li>
+              <li><a href="{{ route('album.index') }}"><i class="fa fa-image"></i> <span>Album</span></a></li>
 
             </ul>
           </li>
@@ -24,18 +24,18 @@
 
 <li><a href="{{ backpack_url('dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
 <li><a href="{{backpack_url('announcement') }}"><i class="fa fa-bullhorn"></i> <span>Announcements</span></a></li>
-<li><a href="{{ route('message.index') }}"><i class="fa fa-inbox"></i> <span>Inbox</span></a></li>
+<li><a href="{{ route('message.index') }}"><i class="fa fa-inbox"></i> <span>Inbox</span> {{-- @if($unreadMessage > 0) <span class="badge">{{ $unreadMessage }}</span> @endif --}} </a></li>
 
 <li class="treeview">
             <a href="#"><i class="fa fa-newspaper-o"></i> <span>Content Management</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
-              <li><a href="{{ route('logo.index') }}"><i class="fa fa-file-o"></i> <span>Logo</span></a></li>
-              <li><a href="{{ route('schoolname.index') }}"><i class="fa fa-file-o"></i> <span>School Name</span></a></li>
-              <li><a href="{{ route('carousel.index') }}"><i class="fa fa-file-o"></i> <span>Carousel</span></a></li>
-              <li><a href="{{ route('about.index') }}"><i class="fa fa-file-o"></i> <span>About</span></a></li>
-              <li><a href="{{backpack_url('facility') }}"><i class="fa fa-file-o"></i> <span>Facilities</span></a></li>
-              <li><a href="{{backpack_url('administration') }}"><i class="fa fa-file-o"></i> <span>Administration</span></a></li>
-              <li><a href="{{ route('album.index') }}"><i class="fa fa-file-o"></i> <span>Album</span></a></li>
+              <li><a href="{{ route('logo.index') }}"><i class="fa fa-circle"></i> <span>Logo</span></a></li>
+              <li><a href="{{ route('schoolname.index') }}"><i class="fa fa-adn"></i> <span>School Name</span></a></li>
+              <li><a href="{{ route('carousel.index') }}"><i class="fa fa-image"></i> <span>Carousel</span></a></li>
+              <li><a href="{{ route('about.index') }}"><i class="fa fa-pencil"></i> <span>About</span></a></li>
+              <li><a href="{{backpack_url('facility') }}"><i class="fa fa-th"></i> <span>Facilities</span></a></li>
+              <li><a href="{{backpack_url('administration') }}"><i class="fa fa-users"></i> <span>Administration</span></a></li>
+              <li><a href="{{ route('album.index') }}"><i class="fa fa-image"></i> <span>Album</span></a></li>
 
             </ul>
           </li>

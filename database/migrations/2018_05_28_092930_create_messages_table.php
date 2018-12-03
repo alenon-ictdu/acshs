@@ -19,6 +19,7 @@ class CreateMessagesTable extends Migration
             $table->string('email');
             $table->string('contact');
             $table->text('message');
+            $table->boolean('seen')->nullable();
             $table->timestamps();
         });
     }

@@ -9,6 +9,7 @@ use App\Carousel;
 use App\Logo;
 use App\School;
 use App\About;
+use App\Message;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (Schema::hasTable('messages')) {
+            $unreadMessage = 0;
+            $messages = Message::where('seen', 0)->get();
+            if ($messages->count() > 0) {
+                foreach ($messages as $row) {
+                    $unreadMessage++;
+                }
+            }
+            view()->share('unreadMessage', $unreadMessage);
+        }
+
         if (Schema::hasTable('page_contents')) {
             $checkIfPageContentIsEmpty = false;
             $checkPageContent = Page_content::all();

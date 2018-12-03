@@ -43,7 +43,7 @@
                 <th>Email</th>
                 <th>Message</th>
                 <th>Date</th>
-                @if(Auth::user()->user_type == 1)<th>Actions</th>@endif
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
