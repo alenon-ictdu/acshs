@@ -30,7 +30,7 @@ class MessageController extends Controller
         $messages->email = $request->email;
         $messages->contact = $request->contact;
         $messages->message = $request->message;
-        $messages->seen = 0;
+        // $messages->seen = 0;
         $messages->save();
 
         Session::flash('success', 'Message Successfully Sent');

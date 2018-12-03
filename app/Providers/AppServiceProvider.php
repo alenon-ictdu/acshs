@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (Schema::hasTable('messages')) {
+        /*if (Schema::hasTable('messages')) {
             $unreadMessage = 0;
             $messages = Message::where('seen', 0)->get();
             if ($messages->count() > 0) {
@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
                 }
             }
             view()->share('unreadMessage', $unreadMessage);
-        }
+        }*/
 
         if (Schema::hasTable('page_contents')) {
             $checkIfPageContentIsEmpty = false;

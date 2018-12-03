@@ -3,7 +3,7 @@
 @if(Auth::user()->user_type == 2)
 <li><a href="{{ backpack_url('dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
 <li><a href="{{backpack_url('announcement') }}"><i class="fa fa-bullhorn"></i> <span>Announcements</span></a></li>
-<li><a href="{{ route('message.index') }}"><i class="fa fa-inbox"></i> <span>Inbox</span> {{-- @if($unreadMessage > 0) <span class="badge">{{ $unreadMessage }}</span> @endif --}} </a></li>
+<li><a href="{{ route('message.index') }}"><i class="fa fa-inbox"></i> <span>Inbox</span></a></li>
 
 <li class="treeview">
             <a href="#"><i class="fa fa-newspaper-o"></i> <span>Content Management</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -24,7 +24,7 @@
 
 <li><a href="{{ backpack_url('dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
 <li><a href="{{backpack_url('announcement') }}"><i class="fa fa-bullhorn"></i> <span>Announcements</span></a></li>
-<li><a href="{{ route('message.index') }}"><i class="fa fa-inbox"></i> <span>Inbox</span> {{-- @if($unreadMessage > 0) <span class="badge">{{ $unreadMessage }}</span> @endif --}} </a></li>
+<li><a href="{{ route('message.index') }}"><i class="fa fa-inbox"></i> <span>Inbox</span></a></li>
 
 <li class="treeview">
             <a href="#"><i class="fa fa-newspaper-o"></i> <span>Content Management</span> <i class="fa fa-angle-left pull-right"></i></a>
