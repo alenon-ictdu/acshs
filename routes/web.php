@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/phpinfo', function() {
+    return phpinfo();
+});
+
 Route::get('/login', function() {
 	return redirect()->route('student.login');
 });
