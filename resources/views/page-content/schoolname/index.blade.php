@@ -48,8 +48,8 @@
               <tr>
                 <td>{{ $row->name }}</td>
                 <td>{{ $row->abbreviation }}</td>
-                <td><a href="{{ route('schoolname.edit', $row->id) }}" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a> <button type="submit" class="btn btn-xs btn-default" form="deleteSchoolname"><i class="fa fa-trash"></i> Delete</button>
-                    <form id="deleteSchoolname" method="POST" action="{{ route('schoolname.destroy', $row->id) }}" onsubmit="return ConfirmDelete()">
+                <td><a href="{{ route('schoolname.edit', $row->id) }}" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a> <button type="submit" class="btn btn-xs btn-default" form="deleteSchoolname{{$row->id}}"><i class="fa fa-trash"></i> Delete</button>
+                    <form id="deleteSchoolname{{$row->id}}" method="POST" action="{{ route('schoolname.destroy', $row->id) }}" onsubmit="return ConfirmDelete()">
                       <input type="hidden" name="_token" value="{{ Session::token() }}">
                             {{ method_field('DELETE') }}
                           </form></td>

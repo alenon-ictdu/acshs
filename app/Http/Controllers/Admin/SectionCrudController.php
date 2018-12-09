@@ -177,11 +177,11 @@ class SectionCrudController extends CrudController
         return view('maintenance');
     }
 
-    public function create()
+    /*public function create()
     {
         // under maintenance
         return view('maintenance');
-    }
+    }*/
 
     public function edit($id)
     {

@@ -50,8 +50,8 @@
                 <td><img src="{{ asset('img/carousel/'. $row->image) }}" width="100"></td>
                 <td>{{ $row->title }}</td>
                 <td>{{ $row->content }}</td>
-                <td><a href="{{ route('carousel.edit', $row->id) }}" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a> <button type="submit" class="btn btn-xs btn-default" form="deleteCarousel"><i class="fa fa-trash"></i> Delete</button>
-                    <form id="deleteCarousel" method="POST" action="{{ route('carousel.destroy', $row->id) }}" onsubmit="return ConfirmDelete()">
+                <td><a href="{{ route('carousel.edit', $row->id) }}" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a> <button type="submit" class="btn btn-xs btn-default" form="deleteCarousel{{$row->id}}"><i class="fa fa-trash"></i> Delete</button>
+                    <form id="deleteCarousel{{$row->id}}" method="POST" action="{{ route('carousel.destroy', $row->id) }}" onsubmit="return ConfirmDelete()">
                       <input type="hidden" name="_token" value="{{ Session::token() }}">
                             {{ method_field('DELETE') }}
                           </form></td>

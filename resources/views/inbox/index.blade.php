@@ -54,8 +54,8 @@
                 <td>{{ $row->email }}</td>
                 <td>{{ strlen($row->message) >= 4 ? substr($row->message, 0, 20). '...' : $row->message }}</td>
                 <td>{{ $row->created_at->toFormattedDateString() }}</td>
-                <td><a href="#" class="btn btn-default btn-xs" id="viewMessage" data-id="{{ $row->id }}"><i class="fa fa-eye"></i> View</a> @if(Auth::user()->user_type == 1) <button type="submit" class="btn btn-xs btn-default" form="deleteMessage"><i class="fa fa-trash"></i> Delete</button>
-                    <form id="deleteMessage" method="POST" action="{{ route('message.destroy', $row->id) }}" onsubmit="return ConfirmDelete()">
+                <td><a href="#" class="btn btn-default btn-xs" id="viewMessage" data-id="{{ $row->id }}"><i class="fa fa-eye"></i> View</a> @if(Auth::user()->user_type == 1) <button type="submit" class="btn btn-xs btn-default" form="deleteMessage{{$row->id}}"><i class="fa fa-trash"></i> Delete</button>
+                    <form id="deleteMessage{{$row->id}}" method="POST" action="{{ route('message.destroy', $row->id) }}" onsubmit="return ConfirmDelete()">
                       <input type="hidden" name="_token" value="{{ Session::token() }}">
                             {{ method_field('DELETE') }}
                           </form>@endif</td>

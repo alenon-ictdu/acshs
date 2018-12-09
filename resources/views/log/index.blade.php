@@ -50,8 +50,8 @@
                 <td style="display:none;">{{ $row->id }}</td>
                 <td>{{ $row->description }}</td>
                 <td>{{ $row->created_at }}</td>
-                <td><button type="submit" class="btn btn-xs btn-default" form="deleteLog"><i class="fa fa-trash"></i> Delete</button>
-                    <form id="deleteLog" method="POST" action="{{ route('log.destroy', $row->id) }}" onsubmit="return ConfirmDelete()">
+                <td><button type="submit" class="btn btn-xs btn-default" form="deleteLog{{$row->id}}"><i class="fa fa-trash"></i> Delete</button>
+                    <form id="deleteLog{{$row->id}}" method="POST" action="{{ route('log.destroy', $row->id) }}" onsubmit="return ConfirmDelete()">
                       <input type="hidden" name="_token" value="{{ Session::token() }}">
                             {{ method_field('DELETE') }}
                           </form></td>

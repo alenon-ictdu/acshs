@@ -52,8 +52,8 @@
                 <td>{{ $row->name }}</td>
                 <td>{{ $row->description }}</td>
                 <td>{{ $row->created_at->toDayDateTimeString() }}</td>
-                <td><a href="{{ route('album.show', $row->id) }}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i> View</a> <a href="{{ route('album.edit', $row->id) }}" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a> <button type="submit" class="btn btn-xs btn-default" form="deleteAlbum"><i class="fa fa-trash"></i> Delete</button>
-                    <form id="deleteAlbum" method="POST" action="{{ route('album.destroy', $row->id) }}" onsubmit="return ConfirmDelete()">
+                <td><a href="{{ route('album.show', $row->id) }}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i> View</a> <a href="{{ route('album.edit', $row->id) }}" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a> <button type="submit" class="btn btn-xs btn-default" form="deleteAlbum{{$row->id}}"><i class="fa fa-trash"></i> Delete</button>
+                    <form id="deleteAlbum{{$row->id}}" method="POST" action="{{ route('album.destroy', $row->id) }}" onsubmit="return ConfirmDelete()">
                       <input type="hidden" name="_token" value="{{ Session::token() }}">
                             {{ method_field('DELETE') }}
                           </form></td>

@@ -54,8 +54,8 @@
                 <td>{{ $row->objectives }}</td>
                 <td>{{ $row->email }}</td>
                 <td>{{ $row->contact }}</td>
-                <td><a href="{{ route('about.edit', $row->id) }}" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a> <button type="submit" class="btn btn-xs btn-default" form="deleteAbout"><i class="fa fa-trash"></i> Delete</button>
-                    <form id="deleteAbout" method="POST" action="{{ route('about.destroy', $row->id) }}" onsubmit="return ConfirmDelete()">
+                <td><a href="{{ route('about.edit', $row->id) }}" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a> <button type="submit" class="btn btn-xs btn-default" form="deleteAbout{{$row->id}}"><i class="fa fa-trash"></i> Delete</button>
+                    <form id="deleteAbout{{$row->id}}" method="POST" action="{{ route('about.destroy', $row->id) }}" onsubmit="return ConfirmDelete()">
                       <input type="hidden" name="_token" value="{{ Session::token() }}">
                             {{ method_field('DELETE') }}
                           </form></td>
