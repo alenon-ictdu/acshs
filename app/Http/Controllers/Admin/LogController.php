@@ -50,4 +50,13 @@ class LogController extends Controller
 
         return redirect()->route('log.index');
     }
+
+    public function destroyAll() {
+        Log::truncate();
+
+        // show a success message
+        \Alert::success('Items has been deleted.')->flash();
+
+        return redirect()->back();
+    }
 }

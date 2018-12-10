@@ -75,6 +75,7 @@ Route::group([
 	Route::get('messages', 'MessageController@index')->name('message.index');
 	Route::get('messages/show', 'MessageController@show')->name('message.show');
 	Route::delete('messages/{id}/delete', 'MessageController@destroy')->name('message.destroy');
+	Route::delete('messages/delete', 'MessageController@destroyAll')->name('message.destroy.all');
 
 	// user routes
 	Route::get('users', 'UserController@index')->name('user.index');
@@ -87,6 +88,7 @@ Route::group([
 	// user routes
 	Route::get('logs', 'LogController@index')->name('log.index');
 	Route::delete('logs/{id}/delete', 'LogController@destroy')->name('log.destroy');
+	Route::delete('logs/delete', 'LogController@destroyAll')->name('log.destroy.all');
 
 	// album routes
 	Route::get('albums', 'AlbumController@index')->name('album.index');

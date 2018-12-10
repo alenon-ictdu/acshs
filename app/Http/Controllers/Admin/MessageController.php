@@ -52,4 +52,20 @@ class MessageController extends Controller
             // echo $messageArr;
         }
     }
+
+    public function destroyAll() {
+        Message::truncate();
+
+        $log = New Log;
+        $log->user_id = Auth::user()->id;
+        $log->type = 'inbox';
+        $log->action = 'deleted all messages';
+        $log->crud = 'delete';
+        $log->save();
+
+        // show a success message
+        \Alert::success('Items has been deleted.')->flash();
+
+        return redirect()->back();
+    }
 }

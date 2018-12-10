@@ -30,7 +30,11 @@
     <div class="col-md-12">
       <div class="box">
         <div class="box-header hidden-print with-border">
-            
+          <button class="pull-right btn btn-danger" form="deleteAllForm"><i class="fa fa-trash"></i> Delete All</button>
+          <form id="deleteAllForm" method="POST" action="{{ route('log.destroy.all') }}" onsubmit="return ConfirmDeleteAll()">
+            <input type="hidden" name="_token" value="{{ Session::token() }}">
+            {{ method_field('DELETE') }}
+          </form>
         </div>
 
         <div class="box-body overflow-hidden">
@@ -100,6 +104,15 @@
     function ConfirmDelete()
     {
     var x = confirm("Are you sure you want to delete this item?");
+    if (x)
+      return true;
+    else
+      return false;
+    }
+
+    function ConfirmDeleteAll()
+    {
+    var x = confirm("Are you sure you want to delete all inboxes?");
     if (x)
       return true;
     else
