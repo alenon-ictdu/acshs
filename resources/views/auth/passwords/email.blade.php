@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
-    <link rel="shortcut icon" href="@if($checkIfPageContentIsEmpty)  @else {{ asset('uploads/'. $web_details->logo) }} @endif">
+    <link rel="shortcut icon" href="@if(!$logoEmpty) {{ asset('img/logo/'.$publicLogo->image) }} @endif">
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
 <!--===============================================================================================-->
@@ -32,7 +32,7 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
-                    <img src="@if($checkIfPageContentIsEmpty) {{ asset('img/no-image.png') }} @else {{ asset('uploads/'. $web_details->logo) }} @endif" alt="Logo">
+                    <img src="@if(!$logoEmpty) {{ asset('img/logo/'. $publicLogo->image) }} @else {{ asset('img/no-image.png') }} @endif" alt="Logo">
                 </div>
 
                 <form class="login100-form validate-form" method="POST" action="{{ route('password.email') }}">
