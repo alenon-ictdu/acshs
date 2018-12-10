@@ -52,6 +52,9 @@ class LogController extends Controller
     }
 
     public function destroyAll() {
+        // block other user
+        abort_if(Auth::user()->user_type == 2, 404);
+        
         Log::truncate();
 
         // show a success message
