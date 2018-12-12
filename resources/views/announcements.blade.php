@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/agency.min.css" rel="stylesheet">
+    <link href="css/agency.css" rel="stylesheet">
 
     <style>
       @media only screen and (max-width: 600px) {

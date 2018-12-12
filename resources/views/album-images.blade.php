@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
 
     <!-- Custom styles for this template -->
-    <link href="{{ asset('css/agency.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/agency.css') }}" rel="stylesheet">
 
     <style>
 .gallery-block{

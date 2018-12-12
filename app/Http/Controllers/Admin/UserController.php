@@ -102,4 +102,12 @@ class UserController extends Controller
 
         return redirect()->route('user.index');
     }
+
+    public function getOnlineUsers() {
+        $user = new User;
+        // echo $user->allOnline()->count();
+        foreach ($user->allOnline() as $row) {
+            echo $row. "<br>";
+        }
+    }
 }

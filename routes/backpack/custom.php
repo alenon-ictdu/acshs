@@ -84,6 +84,8 @@ Route::group([
 	Route::get('users/{id}/edit', 'UserController@edit')->name('user.edit');
 	Route::match(['PUT', 'PATCH'], 'users/{id}/edit', 'UserController@update')->name('user.update');
 	Route::delete('users/{id}/delete', 'UserController@destroy')->name('user.destroy');
+	// get users online
+	Route::get('users/online', 'UserController@getOnlineUsers')->name('users.online');
 
 	// user routes
 	Route::get('logs', 'LogController@index')->name('log.index');

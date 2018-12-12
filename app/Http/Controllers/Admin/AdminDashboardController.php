@@ -12,6 +12,7 @@ use App\Models\Teacher;
 use App\Models\Subject;
 use App\Models\Announcement;
 use App\Message;
+use App\User;
 
 
 class AdminDashboardController extends CrudController
@@ -23,6 +24,9 @@ class AdminDashboardController extends CrudController
 */
     public function dashboard()
     {
+        $user = new User;
+        $onlineUsers = $user->allOnline();
+
         $this->data['title'] = trans('backpack::base.dashboard'); // set the page title
         $students = Student::all();
         $teachers = Teacher::all();
@@ -39,7 +43,8 @@ class AdminDashboardController extends CrudController
             ->with('sections', $sections)
             ->with('ay', $academicyears)
             ->with('latest_news', $latest_news)
-            ->with('messages', $messages);
+            ->with('messages', $messages)
+            ->with('onlineUsers', $onlineUsers);
     }
 
     public function viewAcademicYearSection($id) {
