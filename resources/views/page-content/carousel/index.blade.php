@@ -38,6 +38,7 @@
           <table id="crudTable" class="table table-striped table-hover display responsive nowrap" cellspacing="0">
             <thead>
               <tr>
+                <th>ID</th>
                 <th>Image</th>
                 <th>Title</th>
                 <th>Content</th>
@@ -47,6 +48,7 @@
             <tbody>
               @foreach($carousels as $row)
               <tr>
+                <td>{{ $row->id }}</td>
                 <td><img src="{{ asset('img/carousel/'. $row->image) }}" width="100"></td>
                 <td>{{ $row->title }}</td>
                 <td>{{ $row->content }}</td>
@@ -84,7 +86,16 @@
   <script>
     // datatable init
     $(document).ready( function () {
-        $('#crudTable').DataTable();
+        $('#crudTable').DataTable({
+          "order": [[ 0, "desc" ]],
+          "columnDefs": [
+              {
+                  "targets": [ 0 ],
+                  "visible": false,
+                  "searchable": false
+              }
+          ]
+        });
     } );
 
     // confirm delete

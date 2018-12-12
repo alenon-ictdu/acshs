@@ -38,6 +38,7 @@
           <table id="crudTable" class="table table-striped table-hover display responsive nowrap" cellspacing="0">
             <thead>
               <tr>
+                <th>ID</th>
                 <th>Name</th>
                 <th>Abbreviation</th>
                 <th>Actions</th>
@@ -46,6 +47,7 @@
             <tbody>
               @foreach($schoolnames as $row)
               <tr>
+                <td>{{ $row->id }}</td>
                 <td>{{ $row->name }}</td>
                 <td>{{ $row->abbreviation }}</td>
                 <td><a href="{{ route('schoolname.edit', $row->id) }}" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a> <button type="submit" class="btn btn-xs btn-default" form="deleteSchoolname{{$row->id}}"><i class="fa fa-trash"></i> Delete</button>
@@ -82,7 +84,16 @@
   <script>
     // datatable init
     $(document).ready( function () {
-        $('#crudTable').DataTable();
+        $('#crudTable').DataTable({
+          "order": [[ 0, "desc" ]],
+          "columnDefs": [
+              {
+                  "targets": [ 0 ],
+                  "visible": false,
+                  "searchable": false
+              }
+          ]
+        });
     } );
 
     // confirm delete

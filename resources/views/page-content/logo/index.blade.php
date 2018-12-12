@@ -38,6 +38,7 @@
           <table id="crudTable" class="table table-striped table-hover display responsive nowrap" cellspacing="0">
             <thead>
               <tr>
+                <th>ID</th>
                 <th>Image</th>
                 <th>Actions</th>
               </tr>
@@ -45,6 +46,7 @@
             <tbody>
               @foreach($logos as $row)
               <tr>
+                <td>{{ $row->id }}</td>
                 <td><img src="{{ asset('img/logo/'. $row->image) }}" width="50"></td>
                 <td><a href="{{ route('logo.edit', $row->id) }}" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a> <button type="submit" class="btn btn-xs btn-default" form="deleteLogo{{$row->id}}"><i class="fa fa-trash"></i> Delete</button>
                     <form id="deleteLogo{{$row->id}}" method="POST" action="{{ route('logo.destroy', $row->id) }}" onsubmit="return ConfirmDelete()">
@@ -80,7 +82,16 @@
   <script>
     // datatable init
     $(document).ready( function () {
-        $('#crudTable').DataTable();
+        $('#crudTable').DataTable({
+          "order": [[ 0, "desc" ]],
+          "columnDefs": [
+              {
+                  "targets": [ 0 ],
+                  "visible": false,
+                  "searchable": false
+              }
+          ]
+        });
     } );
 
     // confirm delete

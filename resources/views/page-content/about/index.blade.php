@@ -38,6 +38,7 @@
           <table id="crudTable" class="table table-striped table-hover display responsive" cellspacing="0">
             <thead>
               <tr>
+                <th>ID</th>
                 <th>Mission</th>
                 <th>Vision</th>
                 <th>Objectives</th>
@@ -49,6 +50,7 @@
             <tbody>
               @foreach($abouts as $row)
               <tr>
+                <td>{{ $row->id }}</td>
                 <td>{{ $row->mission }}</td>
                 <td>{{ $row->vision }}</td>
                 <td>{{ $row->objectives }}</td>
@@ -89,7 +91,14 @@
     // datatable init
     $(document).ready( function () {
         $('#crudTable').DataTable({
-          "order": [[ 0, "desc" ]]
+          "order": [[ 0, "desc" ]],
+          "columnDefs": [
+              {
+                  "targets": [ 0 ],
+                  "visible": false,
+                  "searchable": false
+              }
+          ]
         });
     } );
 
